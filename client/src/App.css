@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.none{
+
+color:red;
+}
+
 .mainwindow {
     width: 100vw;
     height: 92vh;
