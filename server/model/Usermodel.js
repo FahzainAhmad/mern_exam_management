@@ -52,6 +52,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6,
     },
+    IsBlocked: {
+        type: Number,
+        default: 0,
+    },
     tokens: [
         {
             token: {

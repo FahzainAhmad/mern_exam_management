@@ -10,6 +10,17 @@ import FacultyRegister from "./Components/FacultyRegister";
 import FacultyLogin from "./Components/FacultyLogin";
 import FacultyDashboard from "./Components/FacultyDashboard";
 import AdminDashboard from "./Components/AdminDashboard";
+import TakeTestPage from "./Components/TestPage";
+import DocView from "./Components/DocPage";
+import FacultyManageRes from "./Components/FacultyManageRes";
+import FacultyLH from "./Components/FacultyLH";
+import Resources from "./Components/Resources";
+import ManageStudent from "./Components/ManageStudent";
+import AdminLoginHistory from "./Components/AdminLoginHistory";
+import BlockedStudents from "./Components/BlockedStudents";
+import BlockedStudentsError from "./Components/BlockedStudentsError";
+import FacultyResources from "./Components/FacultyResources";
+import BlockedStudentsAdmin from "./Components/BlockedStudentsAdmin";
 
 function App() {
     const { setLoginData } = useContext(LoginContext);
@@ -81,9 +92,23 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/dash" element={<Dashboard />} />
                 <Route path="/dashfac" element={<FacultyDashboard />} />
+                <Route path="/dashres" element={<FacultyManageRes />} />
+                <Route path="/facloginhistory" element={<FacultyLH />} />
                 <Route path="/facultyreg" element={<FacultyRegister />} />
+                <Route path="/managestudent" element={<ManageStudent />} />
                 <Route path="/facultylogin" element={<FacultyLogin />} />
+                <Route path="/resources" element={<Resources />} />
                 <Route path="/admindash" element={<AdminDashboard />} />
+                <Route path="/take-test/:examId" element={<TakeTestPage />} />
+                <Route path="/DocView/:examId" element={<DocView />} />
+                <Route path="/AdminLH" element={<AdminLoginHistory />} />
+                <Route path="/facresources" element={<FacultyResources />} />
+                <Route path="/blockstudents" element={<BlockedStudents />} />
+                <Route path="/bsadmin" element={<BlockedStudentsAdmin />} />
+                <Route
+                    path="/blockedstudenterror"
+                    element={<BlockedStudentsError />}
+                />
             </Routes>
         </div>
     );

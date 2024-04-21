@@ -36,11 +36,18 @@ const StudentHeader = () => {
         navigate("/login");
     };
     const goRegister = () => {
-        navigate("/register");
+        navigate("/");
     };
 
     return (
         <div className="headerclass">
+            <h1 className="headertitle">
+                Welcome,{" "}
+                {logindata.validUserOne &&
+                    logindata.validUserOne.name &&
+                    logindata.validUserOne.name}
+            </h1>
+
             {logindata.validUserOne ? (
                 <div>
                     <button

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import AdminHeader from "./AdminHeader";
+import { NavLink, useNavigate } from "react-router-dom";
+import AdminSideBar from "./AdminSideBar";
 
 const AdminDashboard = () => {
+    const navigate = useNavigate();
     const [facultyData, setFacultyData] = useState([]);
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -281,11 +284,7 @@ const AdminDashboard = () => {
             )}
 
             <div className="horcon">
-                <div className="AdminSidebar">
-                    <button className="sidebarbtn">Faculty</button>
-                    <button className="sidebarbtn">Student</button>
-                    <button className="sidebarbtn">Login History</button>
-                </div>
+                <AdminSideBar />
                 <div className="datamaincon">
                     <button
                         className="operation-btn edit adddataabtn"

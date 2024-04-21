@@ -12,7 +12,6 @@ const Login = () => {
     const [passShow, setPassShow] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState("");
     const { logindata, setLoginData } = useContext(LoginContext);
-
     const loginHandler = async (e) => {
         e.preventDefault();
         let submit = false;
@@ -54,6 +53,8 @@ const Login = () => {
                 //alert("done")
                 setEnrollno("");
                 setPassword("");
+            } else if (res.error === "User is blocked") {
+                navigate("/blockedstudenterror");
             } else {
                 alert("Invalid details");
             }
@@ -73,8 +74,10 @@ const Login = () => {
 
             const data = await res.json();
 
-            if (data.status == 401 || !data) {
-                navigate("/*");
+            if (data.status === 401 || !data) {
+                console.log("Not found");
+            } else if (data.error === "User is blocked") {
+                navigate("/blockedstudenterror");
             } else {
                 console.log("user verify");
                 setLoginData(data);
