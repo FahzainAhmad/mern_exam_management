@@ -3,6 +3,11 @@
     background-color: #131313;
 }
 
+.none{
+
+color:red;
+}
+
 .mainwindow {
     width: 100vw;
     height: 92vh;
